@@ -4,12 +4,19 @@ const vm = Vue.createApp({
             firstName: 'Nazar',
             lastName: 'Dev',
             url: 'https://leobit.com',
-            raw_url: '<a href="https://leobit.com" target="_blank">Leobit</a>'
+            raw_url: '<a href="https://leobit.com" target="_blank">Leobit</a>',
+            age: 20
         }
     },
     methods: {
         fullName() {
             return `${this.firstName} ${this.lastName}`
+        },
+        increment() {
+            this.age++
+        },
+        updateLastName(event) {
+            this.lastName = event.target.value
         }
     }
 }).mount('#app')
