@@ -9,6 +9,7 @@
       <p>{{fullName()}}</p>
       <p><a :href="url" target="_blank">Leobit</a></p>
       <!-- <p><a v-bind:href="url" target="_blank">Leobit</a></p> -->
+      <p v-html="raw_url"></p>
 
       <label>First Name</label>
       <input type="text" v-model="firstName"/>
