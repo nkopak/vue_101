@@ -18,9 +18,24 @@
       <option value="text-orange">Orange</option>
     </select>
 
-    <div class="circle" :class="[selectedColor, circle_classes]">
+    <input type="number" v-model="size"/>
+
+    <div class="circle" :class="[selectedColor, circle_classes]" :style="[circle_size, {transform: 'rotate(30deg)'}]">
       Hi!
     </div>
+
+    <p v-if="mode == 1">Showing v-id directive element</p>
+    <template v-else-if="mode == 2">
+      <h3 >v-else-if</h3>
+      <p>Bonus content</p>
+    </template>
+    <div v-else>v-else</div>
+
+    <select v-model="mode">
+      <option value="1">v-if</option>
+      <option value="2">v-else-if</option>
+      <option value="3">v-else</option>
+    </select>
   </div>
 
   <script src="https://unpkg.com/vue@next"></script>
