@@ -24,7 +24,24 @@
       Hi!
     </div>
 
-    <p v-if="mode == 1">Showing v-id directive element</p> //Use v-if if element toggle occasionally or rarely
+    <div>
+      <ul>
+        <li v-for="(bird, index) in birds" :class="bird" :key="bird">
+          {{ bird }} - {{index}}
+        </li>
+      </ul>
+      <hr/>
+      <ul>
+        <li v-for="(person, index) in people" :class="bird">
+          <p v-for="(value, key) in person">
+            {{ key }} {{value}}
+          </p>
+        </li>
+      </ul>
+    </div>
+
+    <p v-if="mode == 1">Showing v-id directive element</p> 
+    <!-- //Use v-if if element toggle occasionally or rarely -->
     <template v-else-if="mode == 2">
       <h3 >v-else-if</h3>
       <p>Bonus content</p>
