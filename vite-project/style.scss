@@ -1,3 +1,7 @@
+::placeholder {
+  color: red;
+}
+
 h1 {
   color: #cc3244;
 
@@ -6,8 +10,8 @@ h1 {
   }
 
   &:hover {
-  color: darken(#cc3244, 15);
-}
+    color: darken(#cc3244, 15);
+  }
 }
 
 
