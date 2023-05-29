@@ -29,24 +29,38 @@
         <button type="submit">Submit</button>
       </template>
     </app-form>
+
+    <select v-model="componentName">
+      <option value="Home">Home</option>
+      <option value="About">About</option>
+    </select>
+
+    <keep-alive>
+      <component :is="componentName"/>
+    </keep-alive>
 </template>
 
 <script>
   import Greeting from '@/components/Greeting.vue' //Registering component locally
   import User from '@/components/User.vue'
   import AppForm from "@/components/Form.vue"
+  import Home from "@/components/Home.vue"
+  import About from "@/components/About.vue"
 
    export default {
     name: 'App',
     components: {
       Greeting,
       User,
-      AppForm
+      AppForm,
+      Home,
+      About
     },
     data() {
       return {
         age:15,
-        help: 'This is HELP!'
+        help: 'This is HELP!',
+        componentName: 'Home'
       }
     },
     methods: {
