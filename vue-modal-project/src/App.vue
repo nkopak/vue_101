@@ -1,17 +1,23 @@
 <!-- eslint-disable vuejs-accessibility/form-control-has-label -->
 <template>
   <h1>{{ title }}</h1>
-  <input type="text" ref="name">
-  <button @click="handleClick">Click here</button>
+  <Modal :header='header' :theme="theme"/>
 </template>
 
 <script>
 
+import Modal from './components/Modal.vue';
+
 export default {
   name: 'App',
+  components: {
+    Modal,
+  },
   data() {
     return {
       title: 'My first Vue app',
+      header: 'Sign up for free :D',
+      theme: 'sale',
     };
   },
   methods: {
