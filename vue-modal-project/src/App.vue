@@ -3,9 +3,28 @@
   <h1>{{ title }}</h1>
   <p>Welcome...</p>
   <div v-if="showModal">
-    <Modal :header='header' :theme="theme" @close="toggleModal"/>
+    <Modal :header='header' :theme="theme" @close="toggleModal">
+      <h2>Ninja giveaway :D</h2>
+      <template v-slot:links>
+        <a href="#">Sign up now</a>
+        <a href="#">More info</a>
+      </template>
+    </Modal>
   </div>
-  <button @click.shift="toggleModal">Open modal</button>
+  <div v-if="showModalTwo">
+    <Modal :header='header' :theme="theme" @close="toggleModalTwo">
+      <h2>Best site ever</h2>
+      <template v-slot:links>
+        <a href="#">Visit our store</a>
+        <a href="#">About</a>
+        <a href="#">Rayan Gosling</a>
+      </template>
+      <h4>You wont believe how good it is</h4>
+    </Modal>
+  </div>
+  <button @click="toggleModal">Open modal</button>
+  <button @click="toggleModalTwo">Open modal 2</button>
+  <!-- <button @click.shift="toggleModal">Open modal</button> -->
   <!-- <button @click.right="toggleModal">Open modal</button> -->
   <!-- <button @click.alt="toggleModal">Open modal</button> -->
 </template>
@@ -25,6 +44,7 @@ export default {
       header: 'Sign up for free :D',
       theme: 'sale',
       showModal: false,
+      showModalTwo: false,
     };
   },
   methods: {
@@ -35,6 +55,9 @@ export default {
     },
     toggleModal() {
       this.showModal = !this.showModal;
+    },
+    toggleModalTwo() {
+      this.showModalTwo = !this.showModalTwo;
     },
   },
 };
