@@ -1,5 +1,6 @@
+<!-- eslint-disable vuejs-accessibility/click-events-have-key-events -->
 <template>
-    <div class="backdrop">
+    <div class="backdrop" @click.self="closeModal">
         <div class="modal" :class="{sale: theme === 'sale'}">
             <h2>{{ header }}</h2>
             <p>Modal content</p>
@@ -11,6 +12,11 @@
 export default {
   name: 'modal-element',
   props: ['header', 'theme'],
+  methods: {
+    closeModal() {
+      this.$emit('close');
+    },
+  },
 };
 </script>
 
